@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, Menu, X, Search, Star, Bell, Trophy, Activity, Calendar, Users, TrendingUp, Clock, User } from 'lucide-react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import LeaguesSection from './leaguesection.jsx';
 
 export default function FutbolStats() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -107,7 +109,7 @@ export default function FutbolStats() {
   ];
   
   const stats = [
-    { label: 'Ligas', value: '25+', icon: <Trophy className="h-8 w-8 text-blue-600" /> },
+    { label: 'Ligas', value: '4', icon: <Trophy className="h-8 w-8 text-blue-600" /> },
     { label: 'Equipos', value: '500+', icon: <Users className="h-8 w-8 text-blue-600" /> },
     { label: 'Estadísticas', value: '10K+', icon: <Activity className="h-8 w-8 text-blue-600" /> },
     { label: 'Partidos', value: '1000+', icon: <Calendar className="h-8 w-8 text-blue-600" /> }
@@ -121,13 +123,13 @@ export default function FutbolStats() {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <div className="text-3xl font-bold">⚽</div>
-              <div className="text-2xl font-bold">FútbolStats</div>
+              <div className="text-2xl font-bold">HLSTATS</div>
             </div>
             
             {/* Desktop navigation */}
             <nav className="hidden md:flex space-x-6">
               <a href="#" className="font-medium hover:text-blue-200 transition duration-200 border-b-2 border-white">Inicio</a>
-              <a href="#" className="font-medium hover:text-blue-200 transition duration-200">Ligas</a>
+              <Link to="/leaguesection.jsx" className="font-medium hover:text-blue-200 transition duration-200">Ligas</Link>
               <a href="#" className="font-medium hover:text-blue-200 transition duration-200">Equipos</a>
               <a href="#" className="font-medium hover:text-blue-200 transition duration-200">Jugadores</a>
               <a href="#" className="font-medium hover:text-blue-200 transition duration-200">Noticias</a>
@@ -512,9 +514,7 @@ export default function FutbolStats() {
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li><a href="#" className="hover:text-white transition">La Liga</a></li>
                 <li><a href="#" className="hover:text-white transition">Premier League</a></li>
-                <li><a href="#" className="hover:text-white transition">Serie A</a></li>
                 <li><a href="#" className="hover:text-white transition">Bundesliga</a></li>
-                <li><a href="#" className="hover:text-white transition">Ligue 1</a></li>
               </ul>
             </div>
             <div>

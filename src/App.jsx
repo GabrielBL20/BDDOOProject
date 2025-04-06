@@ -5,17 +5,19 @@ import './App.css'
 import HomePage from './HomePage'
 import Navbar from './navbar'
 import SplitText from './animatedtext'
+import LeaguesSection from './leaguesection'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-       <HomePage /> 
-      {/* <Navbar /> */}
-      {/* <SplitText /> */}
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* Ruta para la página principal */}
+        <Route path="/" element={<HomePage />} />
+        {/* Ruta para la sección de ligas */}
+        <Route path="/leagues" element={<LeaguesSection />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
