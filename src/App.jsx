@@ -1,21 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import HomePage from './HomePage'
-import Navbar from './navbar'
-import SplitText from './animatedtext'
-import LeaguesSection from './leaguesection'
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import HomePage from "./HomePage";
+import LeaguesPage from "./pages/LeaguesPage";
+import TeamsPage from "./pages/TeamsPage";
+import PlayersPage from "./pages/PlayersPage";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        {/* Ruta para la página principal */}
-        <Route path="/" element={<HomePage />} />
-        {/* Ruta para la sección de ligas */}
-        <Route path="/leagues" element={<LeaguesSection />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/leagues" element={<LeaguesPage />} />
+          <Route path="/teams" element={<TeamsPage />} />
+          <Route path="/players" element={<PlayersPage />} />
+        </Routes>
+      </Layout>
     </Router>
   );
 }
